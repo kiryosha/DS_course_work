@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_kurs" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IService_kurs_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8301/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_kurs_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_token_InputMessage">
+    <wsdl:part name="parameters" element="tns:drop_token" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_token_OutputMessage">
+    <wsdl:part name="parameters" element="tns:drop_tokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_role_bd_InputMessage">
+    <wsdl:part name="parameters" element="tns:role_bd" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_role_bd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:role_bdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_InputMessage">
+    <wsdl:part name="parameters" element="tns:search" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_InputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addpeopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_info_InputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_info" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_infoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_info_two_InputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_info_two" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_info_two_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_info_twoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_post_InputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_post" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_addpeople_post_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addpeople_postResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_change_pass_InputMessage">
+    <wsdl:part name="parameters" element="tns:change_pass" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_change_pass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:change_passResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_deluser_InputMessage">
+    <wsdl:part name="parameters" element="tns:deluser" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_deluser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deluserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_people_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_people" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_people_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_peopleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_staff_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_staff" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_staff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_staffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_buyer_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_buyer" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_buyer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_buyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_provider_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_provider" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_provider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_providerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_admin" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_adminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_fio_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_fio" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_fio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_fioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_tovar_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_tovar" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_tovar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_tovarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_add_tovar_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_add_tovar" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_add_tovar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_add_tovarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_add_tovar_on_sklad_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_add_tovar_on_sklad" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_add_tovar_on_sklad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_add_tovar_on_skladResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_tovar_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_tovar" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_tovar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_tovarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_searc_tovar_name_InputMessage">
+    <wsdl:part name="parameters" element="tns:searc_tovar_name" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_searc_tovar_name_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searc_tovar_nameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_tovar_name_InputMessage">
+    <wsdl:part name="parameters" element="tns:drop_tovar_name" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_tovar_name_OutputMessage">
+    <wsdl:part name="parameters" element="tns:drop_tovar_nameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_ing_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_ing" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_ing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_ingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_tovar_bez_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_tovar_bez" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_tovar_bez_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_tovar_bezResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_ing_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_ing" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_ing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_ingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_add_ing_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_ing" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_add_ing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_ingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_change_data_InputMessage">
+    <wsdl:part name="parameters" element="tns:change_data" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_change_data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:change_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_update_data_InputMessage">
+    <wsdl:part name="parameters" element="tns:update_data" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_update_data_OutputMessage">
+    <wsdl:part name="parameters" element="tns:update_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_update_date_InputMessage">
+    <wsdl:part name="parameters" element="tns:update_date" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_update_date_OutputMessage">
+    <wsdl:part name="parameters" element="tns:update_dateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_sklad_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_sklad" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_sklad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_skladResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_ing_provider_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_ing_provider" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_ing_provider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_ing_providerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_sklad_InputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_sklad" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_vivod_sklad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vivod_skladResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_add_sklad_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_sklad" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_add_sklad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_skladResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_delete_sklad_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_sklad" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_delete_sklad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_skladResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_ing_InputMessage">
+    <wsdl:part name="parameters" element="tns:drop_ing" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_drop_ing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:drop_ingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService_kurs">
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/login" message="tns:IService_kurs_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/loginResponse" message="tns:IService_kurs_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="drop_token">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/drop_token" message="tns:IService_kurs_drop_token_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/drop_tokenResponse" message="tns:IService_kurs_drop_token_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="role_bd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/role_bd" message="tns:IService_kurs_role_bd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/role_bdResponse" message="tns:IService_kurs_role_bd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search" message="tns:IService_kurs_search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/searchResponse" message="tns:IService_kurs_search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addpeople">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/addpeople" message="tns:IService_kurs_addpeople_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/addpeopleResponse" message="tns:IService_kurs_addpeople_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/addpeople_info" message="tns:IService_kurs_addpeople_info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/addpeople_infoResponse" message="tns:IService_kurs_addpeople_info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info_two">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/addpeople_info_two" message="tns:IService_kurs_addpeople_info_two_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/addpeople_info_twoResponse" message="tns:IService_kurs_addpeople_info_two_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_post">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/addpeople_post" message="tns:IService_kurs_addpeople_post_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/addpeople_postResponse" message="tns:IService_kurs_addpeople_post_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="change_pass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/change_pass" message="tns:IService_kurs_change_pass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/change_passResponse" message="tns:IService_kurs_change_pass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deluser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/deluser" message="tns:IService_kurs_deluser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/deluserResponse" message="tns:IService_kurs_deluser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_people">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_people" message="tns:IService_kurs_vivod_people_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_peopleResponse" message="tns:IService_kurs_vivod_people_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_staff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_staff" message="tns:IService_kurs_vivod_staff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_staffResponse" message="tns:IService_kurs_vivod_staff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_buyer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_buyer" message="tns:IService_kurs_vivod_buyer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_buyerResponse" message="tns:IService_kurs_vivod_buyer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_provider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_provider" message="tns:IService_kurs_vivod_provider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_providerResponse" message="tns:IService_kurs_vivod_provider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_admin" message="tns:IService_kurs_vivod_admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_adminResponse" message="tns:IService_kurs_vivod_admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_fio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_fio" message="tns:IService_kurs_search_fio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_fioResponse" message="tns:IService_kurs_search_fio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_tovar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_tovar" message="tns:IService_kurs_search_tovar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_tovarResponse" message="tns:IService_kurs_search_tovar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_add_tovar" message="tns:IService_kurs_search_add_tovar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_add_tovarResponse" message="tns:IService_kurs_search_add_tovar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar_on_sklad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_add_tovar_on_sklad" message="tns:IService_kurs_search_add_tovar_on_sklad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_add_tovar_on_skladResponse" message="tns:IService_kurs_search_add_tovar_on_sklad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_tovar" message="tns:IService_kurs_vivod_tovar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_tovarResponse" message="tns:IService_kurs_vivod_tovar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searc_tovar_name">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/searc_tovar_name" message="tns:IService_kurs_searc_tovar_name_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/searc_tovar_nameResponse" message="tns:IService_kurs_searc_tovar_name_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="drop_tovar_name">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/drop_tovar_name" message="tns:IService_kurs_drop_tovar_name_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/drop_tovar_nameResponse" message="tns:IService_kurs_drop_tovar_name_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_ing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_ing" message="tns:IService_kurs_vivod_ing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_ingResponse" message="tns:IService_kurs_vivod_ing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar_bez">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_tovar_bez" message="tns:IService_kurs_vivod_tovar_bez_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_tovar_bezResponse" message="tns:IService_kurs_vivod_tovar_bez_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_ing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_ing" message="tns:IService_kurs_search_ing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_ingResponse" message="tns:IService_kurs_search_ing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_ing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/add_ing" message="tns:IService_kurs_add_ing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/add_ingResponse" message="tns:IService_kurs_add_ing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="change_data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/change_data" message="tns:IService_kurs_change_data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/change_dataResponse" message="tns:IService_kurs_change_data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update_data">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/update_data" message="tns:IService_kurs_update_data_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/update_dataResponse" message="tns:IService_kurs_update_data_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="update_date">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/update_date" message="tns:IService_kurs_update_date_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/update_dateResponse" message="tns:IService_kurs_update_date_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_sklad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_sklad" message="tns:IService_kurs_search_sklad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_skladResponse" message="tns:IService_kurs_search_sklad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_ing_provider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_ing_provider" message="tns:IService_kurs_search_ing_provider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_ing_providerResponse" message="tns:IService_kurs_search_ing_provider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vivod_sklad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/vivod_sklad" message="tns:IService_kurs_vivod_sklad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/vivod_skladResponse" message="tns:IService_kurs_vivod_sklad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_sklad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/add_sklad" message="tns:IService_kurs_add_sklad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/add_skladResponse" message="tns:IService_kurs_add_sklad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_sklad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/delete_sklad" message="tns:IService_kurs_delete_sklad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/delete_skladResponse" message="tns:IService_kurs_delete_sklad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="drop_ing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/drop_ing" message="tns:IService_kurs_drop_ing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/drop_ingResponse" message="tns:IService_kurs_drop_ing_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService_kurs" type="tns:IService_kurs">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_token">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/drop_token" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="role_bd">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/role_bd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/addpeople" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/addpeople_info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info_two">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/addpeople_info_two" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_post">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/addpeople_post" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_pass">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/change_pass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deluser">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/deluser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_people">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_people" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_staff">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_staff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_buyer">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_buyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_provider">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_provider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_admin">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_fio">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_fio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_tovar">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_tovar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_add_tovar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar_on_sklad">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_add_tovar_on_sklad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_tovar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searc_tovar_name">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/searc_tovar_name" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_tovar_name">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/drop_tovar_name" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_ing">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_ing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar_bez">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_tovar_bez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_ing">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_ing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_ing">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/add_ing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_data">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/change_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_data">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/update_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_date">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/update_date" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_sklad">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_sklad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_ing_provider">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_ing_provider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_sklad">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/vivod_sklad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_sklad">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/add_sklad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_sklad">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/delete_sklad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_ing">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/drop_ing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IService_kurs" type="tns:IService_kurs">
+    <wsp:PolicyReference URI="#NetTcpBinding_IService_kurs_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_token">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/drop_token" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="role_bd">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/role_bd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/addpeople" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/addpeople_info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_info_two">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/addpeople_info_two" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addpeople_post">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/addpeople_post" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_pass">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/change_pass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deluser">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/deluser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_people">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_people" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_staff">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_staff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_buyer">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_buyer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_provider">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_provider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_admin">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_admin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_fio">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_fio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_tovar">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_tovar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_add_tovar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_add_tovar_on_sklad">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_add_tovar_on_sklad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_tovar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searc_tovar_name">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/searc_tovar_name" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_tovar_name">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/drop_tovar_name" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_ing">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_ing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_tovar_bez">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_tovar_bez" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_ing">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_ing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_ing">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/add_ing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_data">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/change_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_data">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/update_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_date">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/update_date" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_sklad">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_sklad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_ing_provider">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_ing_provider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vivod_sklad">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/vivod_sklad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_sklad">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/add_sklad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_sklad">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/delete_sklad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="drop_ing">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/drop_ing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service_kurs">
+    <wsdl:port name="BasicHttpBinding_IService_kurs" binding="tns:BasicHttpBinding_IService_kurs">
+      <soap:address location="http://localhost:8301/Service_kurs" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IService_kurs" binding="tns:NetTcpBinding_IService_kurs">
+      <soap12:address location="net.tcp://localhost:8302/Service_kurs" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8302/Service_kurs</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-VN8T8TC\lilva</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

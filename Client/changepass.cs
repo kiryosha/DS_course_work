@@ -40,7 +40,7 @@ namespace Client
                 else
                 {
                     var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                    string result = client.change_pass(textBox2.Text, textBox1.Text, Settings.Default["user_id"].ToString());
+                    string result = client.change_pass(textBox2.Text, textBox1.Text, Settings.Default["user_id"].ToString(), Settings.Default["token"].ToString());
                     if (result == "no")
                     {
                         MessageBox.Show("Старый пароль введен неверно!");

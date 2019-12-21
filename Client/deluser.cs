@@ -27,7 +27,7 @@ namespace Client
         {
 
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.deluser(textBox2.Text);
+            string result = client.deluser(textBox2.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             if (result == "no")
             {
                 MessageBox.Show("Пользователя не существует!");

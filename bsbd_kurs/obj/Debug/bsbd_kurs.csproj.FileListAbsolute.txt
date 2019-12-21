@@ -28,3 +28,14 @@ C:\Users\lilva\Desktop\bsbd_kurs\bsbd_kurs\bsbd_kurs\obj\Debug\bsbd_kurs.csprojA
 C:\Users\lilva\Desktop\bsbd_kurs\bsbd_kurs\bsbd_kurs\obj\Debug\bsbd_kurs.csproj.CopyComplete
 C:\Users\lilva\Desktop\bsbd_kurs\bsbd_kurs\bsbd_kurs\obj\Debug\bsbd_kurs.dll
 C:\Users\lilva\Desktop\bsbd_kurs\bsbd_kurs\bsbd_kurs\obj\Debug\bsbd_kurs.pdb
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\bsbd_kurs.dll.config
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\bsbd_kurs.dll
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\bsbd_kurs.pdb
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\Google.Protobuf.dll
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\Renci.SshNet.dll
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\bin\Debug\MySql.Data.xml
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.csprojAssemblyReference.cache
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.csproj.CopyComplete
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.dll
+C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.pdb

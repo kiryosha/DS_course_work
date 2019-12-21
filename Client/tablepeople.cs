@@ -24,7 +24,7 @@ namespace Client
             textBox4.Visible = false;
             textBox5.Visible = false;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_people(1);
+            DataTable dt = client.vivod_people(1, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
 
 
@@ -38,7 +38,7 @@ namespace Client
                 button6.Visible = false;
                 button8.Visible = false;
                 string id = "";
-                DataTable dt1 = client.vivod_provider(id);
+                DataTable dt1 = client.vivod_provider(id, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                 dataGridView1.DataSource = dt1;
 
                 textBox1.Visible = false;
@@ -64,7 +64,7 @@ namespace Client
             button6.Visible = false;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
             string id = "";
-            DataTable dt = client.vivod_buyer(id);
+            DataTable dt = client.vivod_buyer(id, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
         }
 
@@ -78,7 +78,7 @@ namespace Client
             textBox5.Visible = false;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
             string id = "";
-            DataTable dt = client.vivod_provider(id);
+            DataTable dt = client.vivod_provider(id, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
             button1.Visible = false;
             button2.Visible = false;
@@ -97,7 +97,7 @@ namespace Client
             textBox5.Visible = false;
             textBox1.Visible = true;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_people(1);
+            DataTable dt = client.vivod_people(1, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
             button1.Visible = true;
             button2.Visible = true;
@@ -121,7 +121,7 @@ namespace Client
             textBox5.Visible = false;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
             string id = "";
-            DataTable dt = client.vivod_staff(id);
+            DataTable dt = client.vivod_staff(id, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
             button1.Visible = false;
             button2.Visible = false;
@@ -141,7 +141,7 @@ namespace Client
             textBox5.Visible = true;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
             string id = "";
-            DataTable dt = client.vivod_admin(id);
+            DataTable dt = client.vivod_admin(id, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
             button1.Visible = false;
             button2.Visible = false;
@@ -165,7 +165,7 @@ namespace Client
                 {
                     button10.Visible = false;
                     button9.Visible = false;
-                    DataTable dt = client.search_fio(textBox1.Text);
+                    DataTable dt = client.search_fio(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -179,7 +179,7 @@ namespace Client
                 {
                     button10.Visible = false;
                     button9.Visible = false;
-                    DataTable dt = client.vivod_buyer(textBox2.Text);
+                    DataTable dt = client.vivod_buyer(textBox2.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -194,7 +194,7 @@ namespace Client
 
                     button10.Visible = false;
                     button9.Visible = false;
-                    DataTable dt = client.vivod_provider(textBox3.Text);
+                    DataTable dt = client.vivod_provider(textBox3.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -208,7 +208,7 @@ namespace Client
                 {
                     button10.Visible = false;
                     button9.Visible = false;
-                    DataTable dt = client.vivod_staff(textBox4.Text);
+                    DataTable dt = client.vivod_staff(textBox4.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -222,7 +222,7 @@ namespace Client
                 {
                     button10.Visible = false;
                     button9.Visible = false;
-                    DataTable dt = client.vivod_admin(textBox5.Text);
+                    DataTable dt = client.vivod_admin(textBox5.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     dataGridView1.DataSource = dt;
                 }
             }
@@ -263,7 +263,7 @@ namespace Client
                 button9.Visible = true;
             }
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_people(str);
+            DataTable dt = client.vivod_people(str, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
         }
 
@@ -275,7 +275,7 @@ namespace Client
                 button9.Visible = false;
             }
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_people(str);
+            DataTable dt = client.vivod_people(str, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
         }
     }

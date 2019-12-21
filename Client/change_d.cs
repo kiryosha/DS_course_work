@@ -16,7 +16,7 @@ namespace Client
         public void update_d()
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.change_data(Settings.Default["user_id"].ToString());
+            DataTable dt = client.change_data(Settings.Default["user_id"].ToString(), Settings.Default["token"].ToString());
 
             string username = dt.Rows[0].Field<string>("username");
             string email = dt.Rows[0].Field<string>("email");
@@ -57,7 +57,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people", "username", textBox1.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people", "username", textBox1.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("Логин изменен!");
                 update_d();
                 textBox1.Text = "";
@@ -73,7 +73,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people", "email", textBox2.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people", "email", textBox2.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("Почта изменена!");
                 update_d();
                 textBox2.Text = "";
@@ -89,7 +89,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people", "fio", textBox3.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people", "fio", textBox3.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("ФИО изменено!");
                 update_d();
                 textBox3.Text = "";
@@ -107,7 +107,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_date(Settings.Default["user_id"].ToString(), dateTimePicker1.Value);
+                client.update_date(Settings.Default["user_id"].ToString(), dateTimePicker1.Value, Settings.Default["token"].ToString());
                 MessageBox.Show("Дата дня рождения изменена!");
                 update_d();
                 dateTimePicker1.Value = DateTime.Now;
@@ -123,7 +123,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people_info", "phone_number", textBox5.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people_info", "phone_number", textBox5.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("Номер телефона изменен!");
                 update_d();
                 textBox5.Text = "";
@@ -139,7 +139,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people_info_two", "card_number", textBox6.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people_info_two", "card_number", textBox6.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("Номер карты изменен!");
                 update_d();
                 textBox6.Text = "";
@@ -155,7 +155,7 @@ namespace Client
             else
             {
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                client.update_data(Settings.Default["user_id"].ToString(), "people", "address", textBox4.Text);
+                client.update_data(Settings.Default["user_id"].ToString(), "people", "address", textBox4.Text, Settings.Default["token"].ToString());
                 MessageBox.Show("Адрес был изменен!");
                 update_d();
                 textBox4.Text = "";

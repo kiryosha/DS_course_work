@@ -16,7 +16,7 @@ namespace Client
         public void vivod()
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_tovar();
+            DataTable dt = client.vivod_tovar(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
 
         }
@@ -24,14 +24,14 @@ namespace Client
         public void vivod_sklad()
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_sklad();
+            DataTable dt = client.vivod_sklad(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView3.DataSource = dt;
         }
 
         public void vivod_ing()
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_ing();
+            DataTable dt = client.vivod_ing(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView2.DataSource = dt;
         }
 
@@ -94,13 +94,19 @@ namespace Client
                 button6.Enabled = false;
                 button5.Enabled = false;
                 button2.Enabled = false;
+                button13.Enabled = false;
+
             }
 
             if (Settings.Default["role_bd"].ToString() == "provider")
             {
-                tabPage1.Parent = null;
-                tabPage3.Parent = null;
                 button7.Enabled = false;
+                button14.Enabled = false;
+                button13.Enabled = false;
+                button6.Enabled = false;
+                button5.Enabled = false;
+                button2.Enabled = false;
+                button13.Enabled = false;
             }
 
         }
@@ -147,7 +153,7 @@ namespace Client
             bool IsDigit2 = textBox2.Text.All(char.IsDigit);
             bool IsDigit3 = textBox3.Text.All(char.IsDigit);
             bool IsDigit5 = textBox3.Text.All(char.IsDigit);
-            string res = client.search_sklad(textBox4.Text);
+            string res = client.search_sklad(textBox4.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
             {
                 MessageBox.Show("Все поля должны быть заполнены!");
@@ -166,7 +172,7 @@ namespace Client
                         button5.Visible = false;
                         Button_Lable_false();
 
-                        string result = client.search_tovar(textBox1.Text);
+                        string result = client.search_tovar(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                         if (result == "yes")
                         {
                             textBox1.Text = "";
@@ -178,8 +184,8 @@ namespace Client
                         }
                         else
                         {
-                            client.search_add_tovar(textBox1.Text, textBox2.Text, textBox3.Text);
-                            client.search_add_tovar_on_sklad(textBox1.Text, textBox4.Text, textBox5.Text);
+                            client.search_add_tovar(textBox1.Text, textBox2.Text, textBox3.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                            client.search_add_tovar_on_sklad(textBox1.Text, textBox4.Text, textBox5.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                             textBox1.Text = "";
                             textBox2.Text = "";
                             textBox4.Text = "";
@@ -188,7 +194,7 @@ namespace Client
                             tabPage5.Parent = null;
                             MessageBox.Show("Товар создан!");
                         }
-                        DataTable dt = client.vivod_tovar();
+                        DataTable dt = client.vivod_tovar(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                         dataGridView1.DataSource = dt;
                     }
                     else
@@ -216,7 +222,7 @@ namespace Client
             button3.Visible = false;
             Button_Lable_false();
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.searc_tovar_name(textBox1.Text);
+            DataTable dt = client.searc_tovar_name(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             dataGridView1.DataSource = dt;
             textBox1.Text = "";
             textBox2.Text = "";
@@ -270,7 +276,7 @@ namespace Client
         private void button9_Click(object sender, EventArgs e)
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_tovar_bez();
+            DataTable dt = client.vivod_tovar_bez(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             tabControl1.SelectedTab = tabPage2;
             dataGridView2.DataSource = dt;
             button9.Visible = false;
@@ -296,8 +302,8 @@ namespace Client
         private void button12_Click(object sender, EventArgs e)
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.search_tovar(textBox9.Text);
-            string res = client.search_ing_provider(textBox7.Text);
+            string result = client.search_tovar(textBox9.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+            string res = client.search_ing_provider(textBox7.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             bool IsDigit8 = textBox8.Text.All(char.IsDigit);
             if (textBox9.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "")
             {
@@ -325,7 +331,7 @@ namespace Client
                             button12.Visible = false;
                             button20.Visible = false;
                             button21.Visible = true;
-                            client.add_ing(textBox9.Text, textBox6.Text, textBox7.Text, textBox8.Text);
+                            client.add_ing(textBox9.Text, textBox6.Text, textBox7.Text, textBox8.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                             MessageBox.Show("Ингредиент добавлен!");
                             vivod_ing();
                             textBox6.Text = "";
@@ -356,7 +362,7 @@ namespace Client
         private void button11_Click(object sender, EventArgs e)
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.search_ing(textBox6.Text);
+            DataTable dt = client.search_ing(textBox6.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             tabControl1.SelectedTab = tabPage2;
             dataGridView2.DataSource = dt;
             button11.Visible = false;
@@ -379,10 +385,10 @@ namespace Client
         private void button14_Click(object sender, EventArgs e)
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.search_tovar(textBox1.Text);
+            string result = client.search_tovar(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             if(result == "yes")
             {
-                client.drop_tovar_name(textBox1.Text);
+                client.drop_tovar_name(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                 label1.Visible = false;
                 textBox1.Text = "";
                 textBox1.Visible = false;
@@ -420,7 +426,7 @@ namespace Client
         {
             button15.Visible = false;
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.search_sklad(textBox10.Text);
+            string result = client.search_sklad(textBox10.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             if(textBox10.Text == "")
             {
                 MessageBox.Show("Поле не может быть пустым!");
@@ -440,7 +446,7 @@ namespace Client
                     button15.Visible = false;
                     button16.Visible = true;
                     button17.Visible = true;
-                    client.add_sklad(textBox10.Text);
+                    client.add_sklad(textBox10.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     vivod_sklad();
                     MessageBox.Show("Склад добавлен!");
                     textBox10.Text = "";
@@ -460,7 +466,7 @@ namespace Client
         private void button18_Click(object sender, EventArgs e)
         {
             var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.search_sklad(textBox10.Text);
+            string result = client.search_sklad(textBox10.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
             if (textBox10.Text == "")
             {
                 MessageBox.Show("Поле не может быть пустым!");
@@ -480,7 +486,7 @@ namespace Client
                     button18.Visible = false;
                     button17.Visible = true;
                     button16.Visible = true;
-                    client.delete_sklad(textBox10.Text);
+                    client.delete_sklad(textBox10.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     vivod_sklad();
                     MessageBox.Show("Склад удален!");
                     textBox10.Text = "";
@@ -537,10 +543,10 @@ namespace Client
                     textBox7.Text = "";
                 }
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                string result = client.search_ing_provider(textBox7.Text);
+                string result = client.search_ing_provider(textBox7.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                 if(result == "yes")
                 {
-                    string res = client.drop_ing(textBox6.Text, textBox7.Text);
+                    string res = client.drop_ing(textBox6.Text, textBox7.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     if(res == "yes")
                     {
                         vivod_ing();

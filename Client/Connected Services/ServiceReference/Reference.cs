@@ -34,196 +34,196 @@ namespace Client.ServiceReference {
         System.Threading.Tasks.Task<string> role_bdAsync(string user_id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search", ReplyAction="http://tempuri.org/IService_kurs/searchResponse")]
-        string search(string email);
+        string search(string email, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search", ReplyAction="http://tempuri.org/IService_kurs/searchResponse")]
-        System.Threading.Tasks.Task<string> searchAsync(string email);
+        System.Threading.Tasks.Task<string> searchAsync(string email, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople", ReplyAction="http://tempuri.org/IService_kurs/addpeopleResponse")]
-        void addpeople(string email, string fio, string address, string role);
+        void addpeople(string email, string fio, string address, string role, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople", ReplyAction="http://tempuri.org/IService_kurs/addpeopleResponse")]
-        System.Threading.Tasks.Task addpeopleAsync(string email, string fio, string address, string role);
+        System.Threading.Tasks.Task addpeopleAsync(string email, string fio, string address, string role, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_info", ReplyAction="http://tempuri.org/IService_kurs/addpeople_infoResponse")]
-        void addpeople_info(string email, System.DateTime d_date, string phone_number);
+        void addpeople_info(string email, System.DateTime d_date, string phone_number, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_info", ReplyAction="http://tempuri.org/IService_kurs/addpeople_infoResponse")]
-        System.Threading.Tasks.Task addpeople_infoAsync(string email, System.DateTime d_date, string phone_number);
+        System.Threading.Tasks.Task addpeople_infoAsync(string email, System.DateTime d_date, string phone_number, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_info_two", ReplyAction="http://tempuri.org/IService_kurs/addpeople_info_twoResponse")]
-        void addpeople_info_two(string email, string card_number);
+        void addpeople_info_two(string email, string card_number, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_info_two", ReplyAction="http://tempuri.org/IService_kurs/addpeople_info_twoResponse")]
-        System.Threading.Tasks.Task addpeople_info_twoAsync(string email, string card_number);
+        System.Threading.Tasks.Task addpeople_info_twoAsync(string email, string card_number, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_post", ReplyAction="http://tempuri.org/IService_kurs/addpeople_postResponse")]
-        void addpeople_post(string email, string post, string salary, string role);
+        void addpeople_post(string email, string post, string salary, string role, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/addpeople_post", ReplyAction="http://tempuri.org/IService_kurs/addpeople_postResponse")]
-        System.Threading.Tasks.Task addpeople_postAsync(string email, string post, string salary, string role);
+        System.Threading.Tasks.Task addpeople_postAsync(string email, string post, string salary, string role, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/change_pass", ReplyAction="http://tempuri.org/IService_kurs/change_passResponse")]
-        string change_pass(string new_pas, string old_pas, string user_id);
+        string change_pass(string new_pas, string old_pas, string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/change_pass", ReplyAction="http://tempuri.org/IService_kurs/change_passResponse")]
-        System.Threading.Tasks.Task<string> change_passAsync(string new_pas, string old_pas, string user_id);
+        System.Threading.Tasks.Task<string> change_passAsync(string new_pas, string old_pas, string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/deluser", ReplyAction="http://tempuri.org/IService_kurs/deluserResponse")]
-        string deluser(string username);
+        string deluser(string username, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/deluser", ReplyAction="http://tempuri.org/IService_kurs/deluserResponse")]
-        System.Threading.Tasks.Task<string> deluserAsync(string username);
+        System.Threading.Tasks.Task<string> deluserAsync(string username, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_people", ReplyAction="http://tempuri.org/IService_kurs/vivod_peopleResponse")]
-        System.Data.DataTable vivod_people(int str);
+        System.Data.DataTable vivod_people(int str, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_people", ReplyAction="http://tempuri.org/IService_kurs/vivod_peopleResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_peopleAsync(int str);
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_peopleAsync(int str, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_staff", ReplyAction="http://tempuri.org/IService_kurs/vivod_staffResponse")]
-        System.Data.DataTable vivod_staff(string id);
+        System.Data.DataTable vivod_staff(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_staff", ReplyAction="http://tempuri.org/IService_kurs/vivod_staffResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_staffAsync(string id);
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_staffAsync(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_buyer", ReplyAction="http://tempuri.org/IService_kurs/vivod_buyerResponse")]
-        System.Data.DataTable vivod_buyer(string id);
+        System.Data.DataTable vivod_buyer(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_buyer", ReplyAction="http://tempuri.org/IService_kurs/vivod_buyerResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_buyerAsync(string id);
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_buyerAsync(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_provider", ReplyAction="http://tempuri.org/IService_kurs/vivod_providerResponse")]
-        System.Data.DataTable vivod_provider(string id);
+        System.Data.DataTable vivod_provider(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_provider", ReplyAction="http://tempuri.org/IService_kurs/vivod_providerResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_providerAsync(string id);
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_providerAsync(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_admin", ReplyAction="http://tempuri.org/IService_kurs/vivod_adminResponse")]
-        System.Data.DataTable vivod_admin(string id);
+        System.Data.DataTable vivod_admin(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_admin", ReplyAction="http://tempuri.org/IService_kurs/vivod_adminResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_adminAsync(string id);
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_adminAsync(string id, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_fio", ReplyAction="http://tempuri.org/IService_kurs/search_fioResponse")]
-        System.Data.DataTable search_fio(string fio);
+        System.Data.DataTable search_fio(string fio, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_fio", ReplyAction="http://tempuri.org/IService_kurs/search_fioResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> search_fioAsync(string fio);
+        System.Threading.Tasks.Task<System.Data.DataTable> search_fioAsync(string fio, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_tovar", ReplyAction="http://tempuri.org/IService_kurs/search_tovarResponse")]
-        string search_tovar(string name_tovar);
+        string search_tovar(string name_tovar, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_tovar", ReplyAction="http://tempuri.org/IService_kurs/search_tovarResponse")]
-        System.Threading.Tasks.Task<string> search_tovarAsync(string name_tovar);
+        System.Threading.Tasks.Task<string> search_tovarAsync(string name_tovar, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_add_tovar", ReplyAction="http://tempuri.org/IService_kurs/search_add_tovarResponse")]
-        void search_add_tovar(string name_tovar, string massa_tovar, string price_tovar);
+        void search_add_tovar(string name_tovar, string massa_tovar, string price_tovar, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_add_tovar", ReplyAction="http://tempuri.org/IService_kurs/search_add_tovarResponse")]
-        System.Threading.Tasks.Task search_add_tovarAsync(string name_tovar, string massa_tovar, string price_tovar);
+        System.Threading.Tasks.Task search_add_tovarAsync(string name_tovar, string massa_tovar, string price_tovar, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_add_tovar_on_sklad", ReplyAction="http://tempuri.org/IService_kurs/search_add_tovar_on_skladResponse")]
-        void search_add_tovar_on_sklad(string name_tovar, string sklad_name, string count);
+        void search_add_tovar_on_sklad(string name_tovar, string sklad_name, string count, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_add_tovar_on_sklad", ReplyAction="http://tempuri.org/IService_kurs/search_add_tovar_on_skladResponse")]
-        System.Threading.Tasks.Task search_add_tovar_on_skladAsync(string name_tovar, string sklad_name, string count);
+        System.Threading.Tasks.Task search_add_tovar_on_skladAsync(string name_tovar, string sklad_name, string count, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_tovar", ReplyAction="http://tempuri.org/IService_kurs/vivod_tovarResponse")]
-        System.Data.DataTable vivod_tovar();
+        System.Data.DataTable vivod_tovar(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_tovar", ReplyAction="http://tempuri.org/IService_kurs/vivod_tovarResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovarAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovarAsync(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/searc_tovar_name", ReplyAction="http://tempuri.org/IService_kurs/searc_tovar_nameResponse")]
-        System.Data.DataTable searc_tovar_name(string name);
+        System.Data.DataTable searc_tovar_name(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/searc_tovar_name", ReplyAction="http://tempuri.org/IService_kurs/searc_tovar_nameResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> searc_tovar_nameAsync(string name);
+        System.Threading.Tasks.Task<System.Data.DataTable> searc_tovar_nameAsync(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/drop_tovar_name", ReplyAction="http://tempuri.org/IService_kurs/drop_tovar_nameResponse")]
-        void drop_tovar_name(string name);
+        void drop_tovar_name(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/drop_tovar_name", ReplyAction="http://tempuri.org/IService_kurs/drop_tovar_nameResponse")]
-        System.Threading.Tasks.Task drop_tovar_nameAsync(string name);
+        System.Threading.Tasks.Task drop_tovar_nameAsync(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_ing", ReplyAction="http://tempuri.org/IService_kurs/vivod_ingResponse")]
-        System.Data.DataTable vivod_ing();
+        System.Data.DataTable vivod_ing(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_ing", ReplyAction="http://tempuri.org/IService_kurs/vivod_ingResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_ingAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_ingAsync(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_tovar_bez", ReplyAction="http://tempuri.org/IService_kurs/vivod_tovar_bezResponse")]
-        System.Data.DataTable vivod_tovar_bez();
+        System.Data.DataTable vivod_tovar_bez(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_tovar_bez", ReplyAction="http://tempuri.org/IService_kurs/vivod_tovar_bezResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovar_bezAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovar_bezAsync(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_ing", ReplyAction="http://tempuri.org/IService_kurs/search_ingResponse")]
-        System.Data.DataTable search_ing(string name_ing);
+        System.Data.DataTable search_ing(string name_ing, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_ing", ReplyAction="http://tempuri.org/IService_kurs/search_ingResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> search_ingAsync(string name_ing);
+        System.Threading.Tasks.Task<System.Data.DataTable> search_ingAsync(string name_ing, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_ing", ReplyAction="http://tempuri.org/IService_kurs/add_ingResponse")]
-        void add_ing(string name_tovar, string name_ing, string fio, string count);
+        void add_ing(string name_tovar, string name_ing, string fio, string count, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_ing", ReplyAction="http://tempuri.org/IService_kurs/add_ingResponse")]
-        System.Threading.Tasks.Task add_ingAsync(string name_tovar, string name_ing, string fio, string count);
+        System.Threading.Tasks.Task add_ingAsync(string name_tovar, string name_ing, string fio, string count, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/change_data", ReplyAction="http://tempuri.org/IService_kurs/change_dataResponse")]
-        System.Data.DataTable change_data(string user_id);
+        System.Data.DataTable change_data(string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/change_data", ReplyAction="http://tempuri.org/IService_kurs/change_dataResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> change_dataAsync(string user_id);
+        System.Threading.Tasks.Task<System.Data.DataTable> change_dataAsync(string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/update_data", ReplyAction="http://tempuri.org/IService_kurs/update_dataResponse")]
-        void update_data(string user_id, string table, string pole, string new_data);
+        void update_data(string user_id, string table, string pole, string new_data, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/update_data", ReplyAction="http://tempuri.org/IService_kurs/update_dataResponse")]
-        System.Threading.Tasks.Task update_dataAsync(string user_id, string table, string pole, string new_data);
+        System.Threading.Tasks.Task update_dataAsync(string user_id, string table, string pole, string new_data, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/update_date", ReplyAction="http://tempuri.org/IService_kurs/update_dateResponse")]
-        void update_date(string user_id, System.DateTime date_b);
+        void update_date(string user_id, System.DateTime date_b, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/update_date", ReplyAction="http://tempuri.org/IService_kurs/update_dateResponse")]
-        System.Threading.Tasks.Task update_dateAsync(string user_id, System.DateTime date_b);
+        System.Threading.Tasks.Task update_dateAsync(string user_id, System.DateTime date_b, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_sklad", ReplyAction="http://tempuri.org/IService_kurs/search_skladResponse")]
-        string search_sklad(string name);
+        string search_sklad(string name, string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_sklad", ReplyAction="http://tempuri.org/IService_kurs/search_skladResponse")]
-        System.Threading.Tasks.Task<string> search_skladAsync(string name);
+        System.Threading.Tasks.Task<string> search_skladAsync(string name, string user_id, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_ing_provider", ReplyAction="http://tempuri.org/IService_kurs/search_ing_providerResponse")]
-        string search_ing_provider(string name);
+        string search_ing_provider(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_ing_provider", ReplyAction="http://tempuri.org/IService_kurs/search_ing_providerResponse")]
-        System.Threading.Tasks.Task<string> search_ing_providerAsync(string name);
+        System.Threading.Tasks.Task<string> search_ing_providerAsync(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_sklad", ReplyAction="http://tempuri.org/IService_kurs/vivod_skladResponse")]
-        System.Data.DataTable vivod_sklad();
+        System.Data.DataTable vivod_sklad(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/vivod_sklad", ReplyAction="http://tempuri.org/IService_kurs/vivod_skladResponse")]
-        System.Threading.Tasks.Task<System.Data.DataTable> vivod_skladAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> vivod_skladAsync(string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_sklad", ReplyAction="http://tempuri.org/IService_kurs/add_skladResponse")]
-        void add_sklad(string name);
+        void add_sklad(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_sklad", ReplyAction="http://tempuri.org/IService_kurs/add_skladResponse")]
-        System.Threading.Tasks.Task add_skladAsync(string name);
+        System.Threading.Tasks.Task add_skladAsync(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/delete_sklad", ReplyAction="http://tempuri.org/IService_kurs/delete_skladResponse")]
-        void delete_sklad(string name);
+        void delete_sklad(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/delete_sklad", ReplyAction="http://tempuri.org/IService_kurs/delete_skladResponse")]
-        System.Threading.Tasks.Task delete_skladAsync(string name);
+        System.Threading.Tasks.Task delete_skladAsync(string name, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/drop_ing", ReplyAction="http://tempuri.org/IService_kurs/drop_ingResponse")]
-        string drop_ing(string name, string fio);
+        string drop_ing(string name, string fio, string role_bd, string token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/drop_ing", ReplyAction="http://tempuri.org/IService_kurs/drop_ingResponse")]
-        System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio);
+        System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio, string role_bd, string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -277,260 +277,260 @@ namespace Client.ServiceReference {
             return base.Channel.role_bdAsync(user_id);
         }
         
-        public string search(string email) {
-            return base.Channel.search(email);
+        public string search(string email, string role_bd, string token) {
+            return base.Channel.search(email, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<string> searchAsync(string email) {
-            return base.Channel.searchAsync(email);
+        public System.Threading.Tasks.Task<string> searchAsync(string email, string role_bd, string token) {
+            return base.Channel.searchAsync(email, role_bd, token);
         }
         
-        public void addpeople(string email, string fio, string address, string role) {
-            base.Channel.addpeople(email, fio, address, role);
+        public void addpeople(string email, string fio, string address, string role, string role_bd, string token) {
+            base.Channel.addpeople(email, fio, address, role, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task addpeopleAsync(string email, string fio, string address, string role) {
-            return base.Channel.addpeopleAsync(email, fio, address, role);
+        public System.Threading.Tasks.Task addpeopleAsync(string email, string fio, string address, string role, string role_bd, string token) {
+            return base.Channel.addpeopleAsync(email, fio, address, role, role_bd, token);
         }
         
-        public void addpeople_info(string email, System.DateTime d_date, string phone_number) {
-            base.Channel.addpeople_info(email, d_date, phone_number);
+        public void addpeople_info(string email, System.DateTime d_date, string phone_number, string role_bd, string token) {
+            base.Channel.addpeople_info(email, d_date, phone_number, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task addpeople_infoAsync(string email, System.DateTime d_date, string phone_number) {
-            return base.Channel.addpeople_infoAsync(email, d_date, phone_number);
+        public System.Threading.Tasks.Task addpeople_infoAsync(string email, System.DateTime d_date, string phone_number, string role_bd, string token) {
+            return base.Channel.addpeople_infoAsync(email, d_date, phone_number, role_bd, token);
         }
         
-        public void addpeople_info_two(string email, string card_number) {
-            base.Channel.addpeople_info_two(email, card_number);
+        public void addpeople_info_two(string email, string card_number, string role_bd, string token) {
+            base.Channel.addpeople_info_two(email, card_number, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task addpeople_info_twoAsync(string email, string card_number) {
-            return base.Channel.addpeople_info_twoAsync(email, card_number);
+        public System.Threading.Tasks.Task addpeople_info_twoAsync(string email, string card_number, string role_bd, string token) {
+            return base.Channel.addpeople_info_twoAsync(email, card_number, role_bd, token);
         }
         
-        public void addpeople_post(string email, string post, string salary, string role) {
-            base.Channel.addpeople_post(email, post, salary, role);
+        public void addpeople_post(string email, string post, string salary, string role, string role_bd, string token) {
+            base.Channel.addpeople_post(email, post, salary, role, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task addpeople_postAsync(string email, string post, string salary, string role) {
-            return base.Channel.addpeople_postAsync(email, post, salary, role);
+        public System.Threading.Tasks.Task addpeople_postAsync(string email, string post, string salary, string role, string role_bd, string token) {
+            return base.Channel.addpeople_postAsync(email, post, salary, role, role_bd, token);
         }
         
-        public string change_pass(string new_pas, string old_pas, string user_id) {
-            return base.Channel.change_pass(new_pas, old_pas, user_id);
+        public string change_pass(string new_pas, string old_pas, string user_id, string token) {
+            return base.Channel.change_pass(new_pas, old_pas, user_id, token);
         }
         
-        public System.Threading.Tasks.Task<string> change_passAsync(string new_pas, string old_pas, string user_id) {
-            return base.Channel.change_passAsync(new_pas, old_pas, user_id);
+        public System.Threading.Tasks.Task<string> change_passAsync(string new_pas, string old_pas, string user_id, string token) {
+            return base.Channel.change_passAsync(new_pas, old_pas, user_id, token);
         }
         
-        public string deluser(string username) {
-            return base.Channel.deluser(username);
+        public string deluser(string username, string role_bd, string token) {
+            return base.Channel.deluser(username, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<string> deluserAsync(string username) {
-            return base.Channel.deluserAsync(username);
+        public System.Threading.Tasks.Task<string> deluserAsync(string username, string role_bd, string token) {
+            return base.Channel.deluserAsync(username, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_people(int str) {
-            return base.Channel.vivod_people(str);
+        public System.Data.DataTable vivod_people(int str, string role_bd, string token) {
+            return base.Channel.vivod_people(str, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_peopleAsync(int str) {
-            return base.Channel.vivod_peopleAsync(str);
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_peopleAsync(int str, string role_bd, string token) {
+            return base.Channel.vivod_peopleAsync(str, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_staff(string id) {
-            return base.Channel.vivod_staff(id);
+        public System.Data.DataTable vivod_staff(string id, string role_bd, string token) {
+            return base.Channel.vivod_staff(id, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_staffAsync(string id) {
-            return base.Channel.vivod_staffAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_staffAsync(string id, string role_bd, string token) {
+            return base.Channel.vivod_staffAsync(id, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_buyer(string id) {
-            return base.Channel.vivod_buyer(id);
+        public System.Data.DataTable vivod_buyer(string id, string role_bd, string token) {
+            return base.Channel.vivod_buyer(id, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_buyerAsync(string id) {
-            return base.Channel.vivod_buyerAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_buyerAsync(string id, string role_bd, string token) {
+            return base.Channel.vivod_buyerAsync(id, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_provider(string id) {
-            return base.Channel.vivod_provider(id);
+        public System.Data.DataTable vivod_provider(string id, string role_bd, string token) {
+            return base.Channel.vivod_provider(id, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_providerAsync(string id) {
-            return base.Channel.vivod_providerAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_providerAsync(string id, string role_bd, string token) {
+            return base.Channel.vivod_providerAsync(id, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_admin(string id) {
-            return base.Channel.vivod_admin(id);
+        public System.Data.DataTable vivod_admin(string id, string role_bd, string token) {
+            return base.Channel.vivod_admin(id, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_adminAsync(string id) {
-            return base.Channel.vivod_adminAsync(id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_adminAsync(string id, string role_bd, string token) {
+            return base.Channel.vivod_adminAsync(id, role_bd, token);
         }
         
-        public System.Data.DataTable search_fio(string fio) {
-            return base.Channel.search_fio(fio);
+        public System.Data.DataTable search_fio(string fio, string role_bd, string token) {
+            return base.Channel.search_fio(fio, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> search_fioAsync(string fio) {
-            return base.Channel.search_fioAsync(fio);
+        public System.Threading.Tasks.Task<System.Data.DataTable> search_fioAsync(string fio, string role_bd, string token) {
+            return base.Channel.search_fioAsync(fio, role_bd, token);
         }
         
-        public string search_tovar(string name_tovar) {
-            return base.Channel.search_tovar(name_tovar);
+        public string search_tovar(string name_tovar, string role_bd, string token) {
+            return base.Channel.search_tovar(name_tovar, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<string> search_tovarAsync(string name_tovar) {
-            return base.Channel.search_tovarAsync(name_tovar);
+        public System.Threading.Tasks.Task<string> search_tovarAsync(string name_tovar, string role_bd, string token) {
+            return base.Channel.search_tovarAsync(name_tovar, role_bd, token);
         }
         
-        public void search_add_tovar(string name_tovar, string massa_tovar, string price_tovar) {
-            base.Channel.search_add_tovar(name_tovar, massa_tovar, price_tovar);
+        public void search_add_tovar(string name_tovar, string massa_tovar, string price_tovar, string role_bd, string token) {
+            base.Channel.search_add_tovar(name_tovar, massa_tovar, price_tovar, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task search_add_tovarAsync(string name_tovar, string massa_tovar, string price_tovar) {
-            return base.Channel.search_add_tovarAsync(name_tovar, massa_tovar, price_tovar);
+        public System.Threading.Tasks.Task search_add_tovarAsync(string name_tovar, string massa_tovar, string price_tovar, string role_bd, string token) {
+            return base.Channel.search_add_tovarAsync(name_tovar, massa_tovar, price_tovar, role_bd, token);
         }
         
-        public void search_add_tovar_on_sklad(string name_tovar, string sklad_name, string count) {
-            base.Channel.search_add_tovar_on_sklad(name_tovar, sklad_name, count);
+        public void search_add_tovar_on_sklad(string name_tovar, string sklad_name, string count, string role_bd, string token) {
+            base.Channel.search_add_tovar_on_sklad(name_tovar, sklad_name, count, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task search_add_tovar_on_skladAsync(string name_tovar, string sklad_name, string count) {
-            return base.Channel.search_add_tovar_on_skladAsync(name_tovar, sklad_name, count);
+        public System.Threading.Tasks.Task search_add_tovar_on_skladAsync(string name_tovar, string sklad_name, string count, string role_bd, string token) {
+            return base.Channel.search_add_tovar_on_skladAsync(name_tovar, sklad_name, count, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_tovar() {
-            return base.Channel.vivod_tovar();
+        public System.Data.DataTable vivod_tovar(string role_bd, string token) {
+            return base.Channel.vivod_tovar(role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovarAsync() {
-            return base.Channel.vivod_tovarAsync();
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovarAsync(string role_bd, string token) {
+            return base.Channel.vivod_tovarAsync(role_bd, token);
         }
         
-        public System.Data.DataTable searc_tovar_name(string name) {
-            return base.Channel.searc_tovar_name(name);
+        public System.Data.DataTable searc_tovar_name(string name, string role_bd, string token) {
+            return base.Channel.searc_tovar_name(name, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> searc_tovar_nameAsync(string name) {
-            return base.Channel.searc_tovar_nameAsync(name);
+        public System.Threading.Tasks.Task<System.Data.DataTable> searc_tovar_nameAsync(string name, string role_bd, string token) {
+            return base.Channel.searc_tovar_nameAsync(name, role_bd, token);
         }
         
-        public void drop_tovar_name(string name) {
-            base.Channel.drop_tovar_name(name);
+        public void drop_tovar_name(string name, string role_bd, string token) {
+            base.Channel.drop_tovar_name(name, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task drop_tovar_nameAsync(string name) {
-            return base.Channel.drop_tovar_nameAsync(name);
+        public System.Threading.Tasks.Task drop_tovar_nameAsync(string name, string role_bd, string token) {
+            return base.Channel.drop_tovar_nameAsync(name, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_ing() {
-            return base.Channel.vivod_ing();
+        public System.Data.DataTable vivod_ing(string role_bd, string token) {
+            return base.Channel.vivod_ing(role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_ingAsync() {
-            return base.Channel.vivod_ingAsync();
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_ingAsync(string role_bd, string token) {
+            return base.Channel.vivod_ingAsync(role_bd, token);
         }
         
-        public System.Data.DataTable vivod_tovar_bez() {
-            return base.Channel.vivod_tovar_bez();
+        public System.Data.DataTable vivod_tovar_bez(string role_bd, string token) {
+            return base.Channel.vivod_tovar_bez(role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovar_bezAsync() {
-            return base.Channel.vivod_tovar_bezAsync();
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_tovar_bezAsync(string role_bd, string token) {
+            return base.Channel.vivod_tovar_bezAsync(role_bd, token);
         }
         
-        public System.Data.DataTable search_ing(string name_ing) {
-            return base.Channel.search_ing(name_ing);
+        public System.Data.DataTable search_ing(string name_ing, string role_bd, string token) {
+            return base.Channel.search_ing(name_ing, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> search_ingAsync(string name_ing) {
-            return base.Channel.search_ingAsync(name_ing);
+        public System.Threading.Tasks.Task<System.Data.DataTable> search_ingAsync(string name_ing, string role_bd, string token) {
+            return base.Channel.search_ingAsync(name_ing, role_bd, token);
         }
         
-        public void add_ing(string name_tovar, string name_ing, string fio, string count) {
-            base.Channel.add_ing(name_tovar, name_ing, fio, count);
+        public void add_ing(string name_tovar, string name_ing, string fio, string count, string role_bd, string token) {
+            base.Channel.add_ing(name_tovar, name_ing, fio, count, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task add_ingAsync(string name_tovar, string name_ing, string fio, string count) {
-            return base.Channel.add_ingAsync(name_tovar, name_ing, fio, count);
+        public System.Threading.Tasks.Task add_ingAsync(string name_tovar, string name_ing, string fio, string count, string role_bd, string token) {
+            return base.Channel.add_ingAsync(name_tovar, name_ing, fio, count, role_bd, token);
         }
         
-        public System.Data.DataTable change_data(string user_id) {
-            return base.Channel.change_data(user_id);
+        public System.Data.DataTable change_data(string user_id, string token) {
+            return base.Channel.change_data(user_id, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> change_dataAsync(string user_id) {
-            return base.Channel.change_dataAsync(user_id);
+        public System.Threading.Tasks.Task<System.Data.DataTable> change_dataAsync(string user_id, string token) {
+            return base.Channel.change_dataAsync(user_id, token);
         }
         
-        public void update_data(string user_id, string table, string pole, string new_data) {
-            base.Channel.update_data(user_id, table, pole, new_data);
+        public void update_data(string user_id, string table, string pole, string new_data, string token) {
+            base.Channel.update_data(user_id, table, pole, new_data, token);
         }
         
-        public System.Threading.Tasks.Task update_dataAsync(string user_id, string table, string pole, string new_data) {
-            return base.Channel.update_dataAsync(user_id, table, pole, new_data);
+        public System.Threading.Tasks.Task update_dataAsync(string user_id, string table, string pole, string new_data, string token) {
+            return base.Channel.update_dataAsync(user_id, table, pole, new_data, token);
         }
         
-        public void update_date(string user_id, System.DateTime date_b) {
-            base.Channel.update_date(user_id, date_b);
+        public void update_date(string user_id, System.DateTime date_b, string token) {
+            base.Channel.update_date(user_id, date_b, token);
         }
         
-        public System.Threading.Tasks.Task update_dateAsync(string user_id, System.DateTime date_b) {
-            return base.Channel.update_dateAsync(user_id, date_b);
+        public System.Threading.Tasks.Task update_dateAsync(string user_id, System.DateTime date_b, string token) {
+            return base.Channel.update_dateAsync(user_id, date_b, token);
         }
         
-        public string search_sklad(string name) {
-            return base.Channel.search_sklad(name);
+        public string search_sklad(string name, string user_id, string token) {
+            return base.Channel.search_sklad(name, user_id, token);
         }
         
-        public System.Threading.Tasks.Task<string> search_skladAsync(string name) {
-            return base.Channel.search_skladAsync(name);
+        public System.Threading.Tasks.Task<string> search_skladAsync(string name, string user_id, string token) {
+            return base.Channel.search_skladAsync(name, user_id, token);
         }
         
-        public string search_ing_provider(string name) {
-            return base.Channel.search_ing_provider(name);
+        public string search_ing_provider(string name, string role_bd, string token) {
+            return base.Channel.search_ing_provider(name, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<string> search_ing_providerAsync(string name) {
-            return base.Channel.search_ing_providerAsync(name);
+        public System.Threading.Tasks.Task<string> search_ing_providerAsync(string name, string role_bd, string token) {
+            return base.Channel.search_ing_providerAsync(name, role_bd, token);
         }
         
-        public System.Data.DataTable vivod_sklad() {
-            return base.Channel.vivod_sklad();
+        public System.Data.DataTable vivod_sklad(string role_bd, string token) {
+            return base.Channel.vivod_sklad(role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_skladAsync() {
-            return base.Channel.vivod_skladAsync();
+        public System.Threading.Tasks.Task<System.Data.DataTable> vivod_skladAsync(string role_bd, string token) {
+            return base.Channel.vivod_skladAsync(role_bd, token);
         }
         
-        public void add_sklad(string name) {
-            base.Channel.add_sklad(name);
+        public void add_sklad(string name, string role_bd, string token) {
+            base.Channel.add_sklad(name, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task add_skladAsync(string name) {
-            return base.Channel.add_skladAsync(name);
+        public System.Threading.Tasks.Task add_skladAsync(string name, string role_bd, string token) {
+            return base.Channel.add_skladAsync(name, role_bd, token);
         }
         
-        public void delete_sklad(string name) {
-            base.Channel.delete_sklad(name);
+        public void delete_sklad(string name, string role_bd, string token) {
+            base.Channel.delete_sklad(name, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task delete_skladAsync(string name) {
-            return base.Channel.delete_skladAsync(name);
+        public System.Threading.Tasks.Task delete_skladAsync(string name, string role_bd, string token) {
+            return base.Channel.delete_skladAsync(name, role_bd, token);
         }
         
-        public string drop_ing(string name, string fio) {
-            return base.Channel.drop_ing(name, fio);
+        public string drop_ing(string name, string fio, string role_bd, string token) {
+            return base.Channel.drop_ing(name, fio, role_bd, token);
         }
         
-        public System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio) {
-            return base.Channel.drop_ingAsync(name, fio);
+        public System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio, string role_bd, string token) {
+            return base.Channel.drop_ingAsync(name, fio, role_bd, token);
         }
     }
 }

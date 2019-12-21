@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,12 +59,12 @@ namespace Client
                     role = "admin";
                 }
                 var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-                string result = client.search(textBox1.Text);
+                string result = client.search(textBox1.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                 if (result == "no")
                 {
-                    client.addpeople(textBox1.Text, textBox2.Text, textBox3.Text, role);
-                    client.addpeople_info(textBox1.Text, dateTimePicker1.Value, textBox4.Text);
-                    client.addpeople_info_two(textBox1.Text, textBox5.Text);
+                    client.addpeople(textBox1.Text, textBox2.Text, textBox3.Text, role, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                    client.addpeople_info(textBox1.Text, dateTimePicker1.Value, textBox4.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                    client.addpeople_info_two(textBox1.Text, textBox5.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     if (radioButton1.Checked)
                     {
                         role_bd = "staff";
@@ -77,7 +78,7 @@ namespace Client
                     {
                         role_bd = "buyer";
                     }
-                    client.addpeople_post(textBox1.Text, textBox7.Text, textBox6.Text, role_bd);
+                    client.addpeople_post(textBox1.Text, textBox7.Text, textBox6.Text, role_bd, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     MessageBox.Show("Пользователь успешно создан!");
                     if (login.reg_u == "yes")
                     {

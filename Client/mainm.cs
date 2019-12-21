@@ -24,7 +24,12 @@ namespace Client
                 button7.Visible = false;
             }
             else
+            {
                 label2.Text = "Выша роль: admin";
+                Settings.Default["role_bd"] = "admin";
+                Settings.Default.Save();
+            }
+                
         }
 
         private void button2_Click(object sender, EventArgs e)

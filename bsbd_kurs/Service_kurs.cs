@@ -13,7 +13,7 @@ namespace bsbd_kurs
     // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "Service_kurs" в коде и файле конфигурации.
     public class Service_kurs : IService_kurs
     {
-        public string Encoding_password(string password)
+        private string Encoding_password(string password)
         {
             using (var hash = MD5.Create())
             {
@@ -21,7 +21,7 @@ namespace bsbd_kurs
             }
         }
 
-        public MySqlConnection Connection()
+        private MySqlConnection Connection()
         {
             string connectionString = "datasource=127.0.0.1;port=3306;username=user_db;password='q1234q';database=confectionerydb;";
             MySqlConnection MySqlConnection = new MySqlConnection(connectionString);
@@ -30,7 +30,7 @@ namespace bsbd_kurs
 
         public string search_sessions(string token)
         {
-            string result = "";
+            string result = "no";
             try
             {
                 MySqlConnection MySqlConnection = Connection();
@@ -70,9 +70,9 @@ namespace bsbd_kurs
                 MySqlConnection MySqlConnection = Connection();
                 MySqlConnection.Open();
                 MySqlDataReader MySqlReader = null;
-                MySqlCommand command = new MySqlCommand("SELECT username,password,user_id,role FROM people where username = @username and password", MySqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT username,password,user_id,role FROM people where username = @username and password = @password", MySqlConnection);
                 command.Parameters.AddWithValue("username", username);
-                command.Parameters.AddWithValue("@password", password);
+                command.Parameters.AddWithValue("@password", Encoding_password(password));
                 MySqlReader = command.ExecuteReader();
                 while (MySqlReader.Read())
                 {
@@ -540,7 +540,7 @@ namespace bsbd_kurs
                 string result = search_sessions(token);
                 if (result == "yes")
                 {
-                    if (role_bd == "admin")
+                    if (role_bd == "admin" || role_bd == "staff")
                     {
                         MySqlConnection MySqlConnection = Connection();
                         MySqlConnection.Open();
@@ -1192,18 +1192,18 @@ namespace bsbd_kurs
                         cmd.Connection = MySqlConnection;
                         cmd.ExecuteNonQuery();
                     }
-                    if (table == "people_inf" && pole == "phone_number")
+                    if (table == "people_info" && pole == "phone_number")
                     {
-                        string sqlquery = "Update people set phone_number = @new_data where user_id = @user_id";
+                        string sqlquery = "Update people_info set phone_number = @new_data where user_id = @user_id";
                         MySqlCommand cmd = new MySqlCommand(sqlquery, MySqlConnection);
                         cmd.Parameters.AddWithValue("@new_data", new_data);
                         cmd.Parameters.AddWithValue("@user_id", user_id);
                         cmd.Connection = MySqlConnection;
                         cmd.ExecuteNonQuery();
                     }
-                    if (table == "people_inf_two" && pole == "card_number")
+                    if (table == "people_info_two" && pole == "card_number")
                     {
-                        string sqlquery = "Update people set phone_number = @new_data where user_id = @user_id";
+                        string sqlquery = "Update people_info_two set card_number = @new_data where user_id = @user_id";
                         MySqlCommand cmd = new MySqlCommand(sqlquery, MySqlConnection);
                         cmd.Parameters.AddWithValue("@new_data", new_data);
                         cmd.Parameters.AddWithValue("@user_id", user_id);
@@ -1476,6 +1476,83 @@ namespace bsbd_kurs
                     Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
                     System.Environment.Exit(0);
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return result;
+        }
+        public string add_buyer(string name, string pass, string fio, string address)
+        {
+            string result = "no";
+            try
+            {
+                string r = "";
+                using (SHA1 shaM = new SHA1Managed())
+                {
+                    byte[] hash2 = shaM.ComputeHash(Encoding.UTF8.GetBytes(fio + address));
+                    r = BitConverter.ToString(hash2).Replace("-", "").ToLower();
+                }
+                MySqlConnection MySqlConnection = Connection();
+                MySqlConnection.Open();
+                MySqlDataReader MySqlReader = null;
+                MySqlCommand command = new MySqlCommand("SELECT username FROM people where username = @username", MySqlConnection);
+                command.Parameters.AddWithValue("username", name);
+                MySqlReader = command.ExecuteReader();
+                while (MySqlReader.Read())
+                {
+                    if (name == Convert.ToString(MySqlReader["username"]))
+                    {
+                        result = "yes";
+                        MySqlReader.Close();
+                        break;
+                    }
+                }
+                if(result == "no")
+                {
+                    MySqlReader.Close();
+                    try
+                    {
+                        string sqlquery = "INSERT INTO people (user_id, username, email, password, fio, address, registration, role) VALUES(@user_id, @username, @email, @password, @fio, @address, @registration, 'user')";
+                        MySqlCommand cmd = new MySqlCommand(sqlquery, MySqlConnection);
+                        cmd.Parameters.AddWithValue("@user_id", r);
+                        cmd.Parameters.AddWithValue("@username", name);
+                        cmd.Parameters.AddWithValue("@email", name);
+                        cmd.Parameters.AddWithValue("@password", Encoding_password(pass));
+                        cmd.Parameters.AddWithValue("@fio", fio);
+                        cmd.Parameters.AddWithValue("@address", address);
+                        cmd.Parameters.AddWithValue("@registration", DateTime.Now);
+                        cmd.Connection = MySqlConnection;
+                        cmd.ExecuteNonQuery();
+
+                        Random rnd1 = new Random();
+                        string club_card = rnd1.Next(1000, 9999) + "-" + rnd1.Next(1000, 9999) + "-" + rnd1.Next(1000, 9999) + "-" + rnd1.Next(1000, 9999);
+                        string sqlquery1 = "INSERT INTO buyer (user_id, club_card) VALUES(@user_id, @club_card)";
+                        MySqlCommand cmd1 = new MySqlCommand(sqlquery1, MySqlConnection);
+                        cmd1.Parameters.AddWithValue("@user_id", r);
+                        cmd1.Parameters.AddWithValue("@club_card", club_card);
+                        cmd1.Connection = MySqlConnection;
+                        cmd1.ExecuteNonQuery();
+
+                        string sqlquery2 = "INSERT INTO people_info (user_id) VALUES(@user_id)";
+                        MySqlCommand cmd2 = new MySqlCommand(sqlquery2, MySqlConnection);
+                        cmd2.Parameters.AddWithValue("@user_id", r);
+                        cmd2.Connection = MySqlConnection;
+                        cmd2.ExecuteNonQuery();
+
+                        string sqlquery3 = "INSERT INTO people_info_two (user_id) VALUES(@user_id)";
+                        MySqlCommand cmd3 = new MySqlCommand(sqlquery3, MySqlConnection);
+                        cmd3.Parameters.AddWithValue("@user_id", r);
+                        cmd3.Connection = MySqlConnection;
+                        cmd3.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+                MySqlConnection.Close();
             }
             catch (Exception ex)
             {

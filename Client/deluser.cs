@@ -25,19 +25,26 @@ namespace Client
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            string result = client.deluser(textBox2.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
-            if (result == "no")
+            if(Settings.Default["username"].ToString() == textBox2.Text)
             {
-                MessageBox.Show("Пользователя не существует!");
+                MessageBox.Show("Админ не может удалить самого себя!");
                 textBox2.Text = "";
             }
             else
             {
-                MessageBox.Show("При удалении поставщика будут удалены его ингредиенты!");
-                MessageBox.Show("Пользователь удален!");
-                textBox2.Text = "";
+                var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
+                string result = client.deluser(textBox2.Text, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                if (result == "no")
+                {
+                    MessageBox.Show("Пользователя не существует!");
+                    textBox2.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("При удалении поставщика будут удалены его ингредиенты!");
+                    MessageBox.Show("Пользователь удален!");
+                    textBox2.Text = "";
+                }
             }
         }
     }

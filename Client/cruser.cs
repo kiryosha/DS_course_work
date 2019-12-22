@@ -18,15 +18,6 @@ namespace Client
             InitializeComponent();
             textBox6.Enabled = false;
             textBox7.Enabled = false;
-
-            if(login.reg_u == "yes")
-            {
-                radioButton4.Checked = true;
-
-                radioButton1.Enabled = false;
-                radioButton2.Enabled = false;
-                radioButton3.Enabled = false;
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,11 +71,6 @@ namespace Client
                     }
                     client.addpeople_post(textBox1.Text, textBox7.Text, textBox6.Text, role_bd, Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
                     MessageBox.Show("Пользователь успешно создан!");
-                    if (login.reg_u == "yes")
-                    {
-                        MessageBox.Show("Задан стандартный пароль qwerty1 (После авторизации нужно сменить его в лк)!");
-                        this.Close();
-                    }
                     textBox1.Text = "";
                     textBox2.Text = "";
                     textBox3.Text = "";

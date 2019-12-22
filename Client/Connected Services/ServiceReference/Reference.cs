@@ -224,6 +224,18 @@ namespace Client.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/drop_ing", ReplyAction="http://tempuri.org/IService_kurs/drop_ingResponse")]
         System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio, string role_bd, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_buyer", ReplyAction="http://tempuri.org/IService_kurs/add_buyerResponse")]
+        string add_buyer(string name, string pass, string fio, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/add_buyer", ReplyAction="http://tempuri.org/IService_kurs/add_buyerResponse")]
+        System.Threading.Tasks.Task<string> add_buyerAsync(string name, string pass, string fio, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_sessions", ReplyAction="http://tempuri.org/IService_kurs/search_sessionsResponse")]
+        string search_sessions(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService_kurs/search_sessions", ReplyAction="http://tempuri.org/IService_kurs/search_sessionsResponse")]
+        System.Threading.Tasks.Task<string> search_sessionsAsync(string token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -531,6 +543,22 @@ namespace Client.ServiceReference {
         
         public System.Threading.Tasks.Task<string> drop_ingAsync(string name, string fio, string role_bd, string token) {
             return base.Channel.drop_ingAsync(name, fio, role_bd, token);
+        }
+        
+        public string add_buyer(string name, string pass, string fio, string address) {
+            return base.Channel.add_buyer(name, pass, fio, address);
+        }
+        
+        public System.Threading.Tasks.Task<string> add_buyerAsync(string name, string pass, string fio, string address) {
+            return base.Channel.add_buyerAsync(name, pass, fio, address);
+        }
+        
+        public string search_sessions(string token) {
+            return base.Channel.search_sessions(token);
+        }
+        
+        public System.Threading.Tasks.Task<string> search_sessionsAsync(string token) {
+            return base.Channel.search_sessionsAsync(token);
         }
     }
 }

@@ -247,6 +247,18 @@
   <wsdl:message name="IService_kurs_drop_ing_OutputMessage">
     <wsdl:part name="parameters" element="tns:drop_ingResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_kurs_add_buyer_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_buyer" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_add_buyer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_buyerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_sessions_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_sessions" />
+  </wsdl:message>
+  <wsdl:message name="IService_kurs_search_sessions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_sessionsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService_kurs">
     <wsdl:operation name="login">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/login" message="tns:IService_kurs_login_InputMessage" />
@@ -387,6 +399,14 @@
     <wsdl:operation name="drop_ing">
       <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/drop_ing" message="tns:IService_kurs_drop_ing_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/drop_ingResponse" message="tns:IService_kurs_drop_ing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_buyer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/add_buyer" message="tns:IService_kurs_add_buyer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/add_buyerResponse" message="tns:IService_kurs_add_buyer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_sessions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService_kurs/search_sessions" message="tns:IService_kurs_search_sessions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService_kurs/search_sessionsResponse" message="tns:IService_kurs_search_sessions_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService_kurs" type="tns:IService_kurs">
@@ -699,6 +719,24 @@
     </wsdl:operation>
     <wsdl:operation name="drop_ing">
       <soap:operation soapAction="http://tempuri.org/IService_kurs/drop_ing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_buyer">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/add_buyer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_sessions">
+      <soap:operation soapAction="http://tempuri.org/IService_kurs/search_sessions" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1025,6 +1063,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="add_buyer">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/add_buyer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_sessions">
+      <soap12:operation soapAction="http://tempuri.org/IService_kurs/search_sessions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service_kurs">
     <wsdl:port name="BasicHttpBinding_IService_kurs" binding="tns:BasicHttpBinding_IService_kurs">
@@ -1035,7 +1091,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8302/Service_kurs</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>DESKTOP-VN8T8TC\lilva</Upn>
+          <Upn>DESKTOP-SKL9VHS\lilva</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

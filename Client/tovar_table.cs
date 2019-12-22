@@ -23,16 +23,22 @@ namespace Client
 
         public void vivod_sklad()
         {
-            var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_sklad(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
-            dataGridView3.DataSource = dt;
+            if (Settings.Default["role_bd"].ToString() != "buyer")
+            {
+                var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
+                DataTable dt = client.vivod_sklad(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                dataGridView3.DataSource = dt;
+            }
         }
 
         public void vivod_ing()
         {
-            var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
-            DataTable dt = client.vivod_ing(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
-            dataGridView2.DataSource = dt;
+            if (Settings.Default["role_bd"].ToString() != "buyer")
+            {
+                var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
+                DataTable dt = client.vivod_ing(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
+                dataGridView2.DataSource = dt;
+            }
         }
 
         public void Button_Lable_false()
@@ -40,7 +46,10 @@ namespace Client
 
             vivod();
             vivod_ing();
-            vivod_sklad();
+            if(Settings.Default["role_bd"].ToString() != "provider")
+            {
+                vivod_sklad();
+            }
             button20.Visible = false;
             button18.Visible = false;
             button15.Visible = false;
@@ -107,6 +116,7 @@ namespace Client
                 button5.Enabled = false;
                 button2.Enabled = false;
                 button13.Enabled = false;
+                button21.Enabled = false;
             }
 
         }
@@ -164,7 +174,10 @@ namespace Client
                 {
                     if(res == "yes")
                     {
-                        tabControl1.TabPages.Remove(tabPage5);
+                        if (Settings.Default["role_bd"].ToString() != "admin")
+                        {
+                            tabControl1.TabPages.Remove(tabPage5);
+                        }
                         button13.Visible = true;
                         button3.Visible = true;
                         button2.Visible = true;
@@ -190,8 +203,6 @@ namespace Client
                             textBox2.Text = "";
                             textBox4.Text = "";
                             textBox3.Text = "";
-                            textBox5.Text = "";
-                            tabPage5.Parent = null;
                             MessageBox.Show("Товар создан!");
                         }
                         DataTable dt = client.vivod_tovar(Settings.Default["role_bd"].ToString(), Settings.Default["token"].ToString());
@@ -553,6 +564,15 @@ namespace Client
                         MessageBox.Show("Ингредиент успешно удален!");
                         textBox7.Text = "";
                         textBox6.Text = "";
+                        button22.Visible = false;
+                        button8.Visible = true;
+                        textBox7.Visible = false;
+                        textBox6.Visible = false;
+                        label7.Visible = false;
+                        label6.Visible = false;
+                        button9.Visible = true;
+                        button21.Visible = true;
+                        button7.Visible = true;
                     }
                     else
                     {

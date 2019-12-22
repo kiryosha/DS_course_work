@@ -14,7 +14,6 @@ namespace Client
 {
     public partial class login : Form
     {
-        public static string reg_u = "";
         public login()
         {
             InitializeComponent();
@@ -34,10 +33,17 @@ namespace Client
                 Settings.Default["user_id"] = con.Item5;
                 Settings.Default.Save();
 
-                mainm u = new mainm();
-                this.Hide();
-                u.ShowDialog();
-                this.Show();
+                try
+                {
+                    mainm u = new mainm();
+                    this.Hide();
+                    u.ShowDialog();
+                    this.Show();
+                }
+                catch
+                {
+                    this.Close();
+                }
             }
             else
             {
@@ -54,8 +60,7 @@ namespace Client
 
         private void button3_Click(object sender, EventArgs e)
         {
-            reg_u = "yes";
-            cruser u = new cruser();
+            reg_buyer u = new reg_buyer();
             this.Hide();
             u.ShowDialog();
             this.Show();

@@ -39,3 +39,10 @@ C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.cspro
 C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.csproj.CopyComplete
 C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.dll
 C:\Users\lilva\Desktop\DS-course-work-master\bsbd_kurs\obj\Debug\bsbd_kurs.pdb
+D:\DS-course-work.git\bsbd_kurs\bin\Debug\bsbd_kurs.dll.config
+D:\DS-course-work.git\bsbd_kurs\bin\Debug\bsbd_kurs.dll
+D:\DS-course-work.git\bsbd_kurs\bin\Debug\bsbd_kurs.pdb
+D:\DS-course-work.git\bsbd_kurs\obj\Debug\bsbd_kurs.csproj.CopyComplete
+D:\DS-course-work.git\bsbd_kurs\obj\Debug\bsbd_kurs.dll
+D:\DS-course-work.git\bsbd_kurs\obj\Debug\bsbd_kurs.pdb
+D:\DS-course-work.git\bsbd_kurs\obj\Debug\bsbd_kurs.csprojAssemblyReference.cache

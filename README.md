@@ -13,3 +13,24 @@
 
 ### Как начать 
 
++ Клонировать репозиторий
+
+'''
+git clone https://github.com/kiryosha/DS-course-work.git
+'''
+
++ Скачайте [xampp](https://github.com/kiryosha/DS-course-work.git)
++ Установите и запустить
++ Создайте бд confectionerydb
++ Импортируйте базу, для этого нужно нажать *импорт* в phpmyadmin
++ Перейдите во вкладку *привелегии* создайте пользователя
+
+,,,
+username = user_db
+password = q1234q
+Глобальные привилегии: SELECT, INSERT, UPDATE, DELETE
+'''	 
+
++ Для запуска приложение нужно запустить *Host.exe* (Host/bin/Debug/Host.exe), затем *Client.exe* (Client/bin/Debug/Client.exe)
+
+[Отчет о проделанной работe](https://github.com/kiryosha/DS-course-work/blob/master/%D0%9E%D1%82%D1%87%D0%B5%D1%82.docx?raw=true)

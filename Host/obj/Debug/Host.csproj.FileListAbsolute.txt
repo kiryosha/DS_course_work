@@ -54,3 +54,14 @@ C:\Users\lilva\Desktop\DS-course-work-master\Host\obj\Debug\Host.csprojAssemblyR
 C:\Users\lilva\Desktop\DS-course-work-master\Host\obj\Debug\Host.csproj.CopyComplete
 C:\Users\lilva\Desktop\DS-course-work-master\Host\obj\Debug\Host.exe
 C:\Users\lilva\Desktop\DS-course-work-master\Host\obj\Debug\Host.pdb
+D:\DS-course-work.git\Host\bin\Debug\Host.exe.config
+D:\DS-course-work.git\Host\bin\Debug\Host.exe
+D:\DS-course-work.git\Host\bin\Debug\Host.pdb
+D:\DS-course-work.git\Host\bin\Debug\bsbd_kurs.dll
+D:\DS-course-work.git\Host\bin\Debug\MySql.Data.dll
+D:\DS-course-work.git\Host\bin\Debug\bsbd_kurs.pdb
+D:\DS-course-work.git\Host\bin\Debug\bsbd_kurs.dll.config
+D:\DS-course-work.git\Host\obj\Debug\Host.csprojAssemblyReference.cache
+D:\DS-course-work.git\Host\obj\Debug\Host.csproj.CopyComplete
+D:\DS-course-work.git\Host\obj\Debug\Host.exe
+D:\DS-course-work.git\Host\obj\Debug\Host.pdb

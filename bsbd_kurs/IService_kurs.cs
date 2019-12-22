@@ -117,5 +117,11 @@ namespace bsbd_kurs
 
         [OperationContract]
         string drop_ing(string name, string fio, string role_bd, string token);
+
+        [OperationContract]
+        string add_buyer(string name, string pass, string fio, string address);
+
+        [OperationContract]
+        string search_sessions(string token);
     }
 }

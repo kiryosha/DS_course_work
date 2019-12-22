@@ -22,7 +22,16 @@ namespace Client
             string email = dt.Rows[0].Field<string>("email");
             string fio = dt.Rows[0].Field<string>("fio");
             string address = dt.Rows[0].Field<string>("address");
-            DateTime date_b = dt.Rows[0].Field<DateTime>("birthday_date");
+            try
+            {
+                DateTime date_b = dt.Rows[0].Field<DateTime>("birthday_date");
+                label5.Text = "День рождения: " + date_b.ToShortDateString();
+            }
+            catch
+            {
+                string date_b = dt.Rows[0].Field<string>("birthday_date");
+                label5.Text = "День рождения: " + date_b;
+            }
             string phone_n = dt.Rows[0].Field<string>("phone_number");
             string card_n = dt.Rows[0].Field<string>("card_number");
 
@@ -30,7 +39,6 @@ namespace Client
             label2.Text = "Почта: " + email;
             label3.Text = "ФИО: " + fio;
             label4.Text = "Адрес: " + address;
-            label5.Text = "День рождения: " + date_b.ToShortDateString();
             label6.Text = "Номер телефона: " + phone_n;
             label7.Text = "Номер карты: " + card_n;
         }
@@ -38,8 +46,6 @@ namespace Client
         {
             InitializeComponent();
             update_d();
-
-
 
         }
 

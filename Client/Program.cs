@@ -15,11 +15,15 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if(Settings.Default["token"].ToString() == "")
-                Application.Run(new login());
-            else
+            var client = new ServiceReference.Service_kursClient("NetTcpBinding_IService_kurs");
+            string result = client.search_sessions(Settings.Default["token"].ToString());
+            if(result == "yes")
             {
                 Application.Run(new mainm());
+            }
+            else
+            {
+                Application.Run(new login());
             }
         }
     }

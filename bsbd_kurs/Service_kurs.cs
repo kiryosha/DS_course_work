@@ -13,6 +13,12 @@ namespace bsbd_kurs
     // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени класса "Service_kurs" в коде и файле конфигурации.
     public class Service_kurs : IService_kurs
     {
+        private void alarm()
+        {
+            Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
+            System.Environment.Exit(0);
+        }
+
         private string Encoding_password(string password)
         {
             using (var hash = MD5.Create())
@@ -213,12 +219,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -270,12 +276,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
+                    alarm();
                 }
 
             }
@@ -307,14 +313,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -347,14 +351,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -461,8 +463,7 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -506,14 +507,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -551,14 +550,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -601,14 +598,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -646,14 +641,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -684,14 +677,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -722,14 +713,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -754,14 +743,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -797,14 +784,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return result;
         }
@@ -836,14 +821,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
         }
 
@@ -883,14 +866,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
         }
 
@@ -910,14 +891,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
 
             return dt;
@@ -940,14 +919,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -972,14 +949,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1004,14 +979,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -1032,14 +1005,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -1061,14 +1032,12 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             else
             {
-                Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                System.Environment.Exit(0);
+                alarm();
             }
             return dt;
         }
@@ -1102,14 +1071,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1136,8 +1103,7 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1214,8 +1180,7 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1242,8 +1207,7 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1307,8 +1271,7 @@ namespace bsbd_kurs
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             return result;
@@ -1333,14 +1296,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1370,14 +1331,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1406,14 +1365,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)
@@ -1467,14 +1424,12 @@ namespace bsbd_kurs
                     }
                     else
                     {
-                        Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                        System.Environment.Exit(0);
+                        alarm();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Опасность, кто-то хочет хакнуть!!!");
-                    System.Environment.Exit(0);
+                    alarm();
                 }
             }
             catch (Exception ex)

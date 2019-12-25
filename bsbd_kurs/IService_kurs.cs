@@ -101,7 +101,7 @@ namespace bsbd_kurs
         void update_date(string user_id, DateTime date_b, string token);
 
         [OperationContract]
-        string search_sklad(string name, string user_id, string token);
+        string search_sklad(string name, string role_bd, string token);
 
         [OperationContract]
         string search_ing_provider(string name, string role_bd, string token);

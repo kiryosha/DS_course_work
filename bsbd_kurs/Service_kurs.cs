@@ -218,14 +218,10 @@ namespace bsbd_kurs
                         MySqlConnection.Close();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -275,14 +271,10 @@ namespace bsbd_kurs
                         Console.WriteLine($"Пользователь {email} успешно создан!");
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
 
             }
             catch (Exception ex)
@@ -312,14 +304,10 @@ namespace bsbd_kurs
                         MySqlConnection.Close();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -350,14 +338,10 @@ namespace bsbd_kurs
                         MySqlConnection.Close();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -462,9 +446,7 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -506,14 +488,10 @@ namespace bsbd_kurs
                         }
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -549,14 +527,10 @@ namespace bsbd_kurs
                         addapter.Fill(dt);
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -597,14 +571,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -640,14 +610,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -676,14 +642,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -712,14 +674,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -742,14 +700,10 @@ namespace bsbd_kurs
                         addapter.Fill(dt);
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -783,14 +737,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return result;
         }
 
@@ -820,14 +770,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
         }
 
         public void search_add_tovar_on_sklad(string name_tovar, string sklad_name, string count, string role_bd, string token)
@@ -865,14 +811,10 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
         }
 
         public DataTable vivod_tovar(string role_bd, string token)
@@ -890,15 +832,10 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
-
             return dt;
         }
 
@@ -918,14 +855,10 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -948,14 +881,10 @@ namespace bsbd_kurs
                         MySqlConnection.Close();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -978,14 +907,10 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -1004,14 +929,10 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -1031,14 +952,10 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             else
-            {
                 alarm();
-            }
             return dt;
         }
 
@@ -1070,14 +987,10 @@ namespace bsbd_kurs
                         cmd1.ExecuteNonQuery();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1102,9 +1015,7 @@ namespace bsbd_kurs
                     addapter.Fill(dt);
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1179,9 +1090,7 @@ namespace bsbd_kurs
 
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1206,9 +1115,7 @@ namespace bsbd_kurs
                     cmd.ExecuteNonQuery();
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1216,26 +1123,37 @@ namespace bsbd_kurs
             }
         }
 
-        public string search_sklad(string name, string user_id, string token)
+        public string search_sklad(string name, string role_bd, string token)
         {
             string result = "no";
             try
             {
-                MySqlConnection MySqlConnection = Connection();
-                MySqlConnection.Open();
-                MySqlCommand command = new MySqlCommand("select sklad_name from sklad where sklad_name = @sklad_name", MySqlConnection);
-                command.Parameters.AddWithValue("@sklad_name", name);
-                MySqlDataReader MySqlReader = null;
-                MySqlReader = command.ExecuteReader();
-                while (MySqlReader.Read())
+                string r = search_sessions(token);
+                if (r == "yes")
                 {
-                    if (name == Convert.ToString(MySqlReader["sklad_name"]))
+                    if (role_bd == "admin" || role_bd == "staff")
                     {
-                        MySqlReader.Close();
-                        result = "yes";
-                        break;
+                        MySqlConnection MySqlConnection = Connection();
+                        MySqlConnection.Open();
+                        MySqlCommand command = new MySqlCommand("select sklad_name from sklad where sklad_name = @sklad_name", MySqlConnection);
+                        command.Parameters.AddWithValue("@sklad_name", name);
+                        MySqlDataReader MySqlReader = null;
+                        MySqlReader = command.ExecuteReader();
+                        while (MySqlReader.Read())
+                        {
+                            if (name == Convert.ToString(MySqlReader["sklad_name"]))
+                            {
+                                MySqlReader.Close();
+                                result = "yes";
+                                break;
+                            }
+                        }
                     }
+                    else
+                        alarm();
                 }
+                else
+                    alarm();
             }
             catch (Exception ex)
             {
@@ -1270,9 +1188,7 @@ namespace bsbd_kurs
                     }
                 }
                 else
-                {
                     alarm();
-                }
             }
             return result;
         }
@@ -1295,14 +1211,10 @@ namespace bsbd_kurs
                         addapter.Fill(dt);
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1330,14 +1242,10 @@ namespace bsbd_kurs
                         cmd1.ExecuteNonQuery();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1364,14 +1272,10 @@ namespace bsbd_kurs
                         cmd1.ExecuteNonQuery();
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {
@@ -1423,14 +1327,10 @@ namespace bsbd_kurs
                         }
                     }
                     else
-                    {
                         alarm();
-                    }
                 }
                 else
-                {
                     alarm();
-                }
             }
             catch (Exception ex)
             {

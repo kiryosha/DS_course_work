@@ -137,7 +137,7 @@ namespace bsbd_kurs
                 MySqlConnection MySqlConnection = Connection();
                 MySqlConnection.Open();
                 MySqlDataReader MySqlReader = null;
-                MySqlCommand command = new MySqlCommand("SELECT * FROM staff where user_id = @user_id", MySqlConnection);
+                MySqlCommand command = new MySqlCommand("SELECT user_id FROM staff where user_id = @user_id", MySqlConnection);
                 command.Parameters.AddWithValue("@user_id", user_id);
                 command.Connection = MySqlConnection;
                 MySqlReader = command.ExecuteReader();
@@ -152,7 +152,7 @@ namespace bsbd_kurs
                 }
                 MySqlReader.Close();
                 MySqlDataReader MySqlReader2 = null;
-                MySqlCommand command2 = new MySqlCommand("SELECT * FROM buyer where user_id = @user_id", MySqlConnection);
+                MySqlCommand command2 = new MySqlCommand("SELECT user_id FROM buyer where user_id = @user_id", MySqlConnection);
                 command2.Parameters.AddWithValue("@user_id", user_id);
                 command2.Connection = MySqlConnection;
                 MySqlReader2 = command2.ExecuteReader();
@@ -167,7 +167,7 @@ namespace bsbd_kurs
                 }
                 MySqlReader2.Close();
                 MySqlDataReader MySqlReader3 = null;
-                MySqlCommand command3 = new MySqlCommand("SELECT * FROM provider where user_id = @user_id", MySqlConnection);
+                MySqlCommand command3 = new MySqlCommand("SELECT user_id FROM provider where user_id = @user_id", MySqlConnection);
                 command3.Parameters.AddWithValue("@user_id", user_id);
                 command3.Connection = MySqlConnection;
                 MySqlReader3 = command3.ExecuteReader();

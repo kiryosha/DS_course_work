@@ -84,6 +84,8 @@ namespace bsbd_kurs
                 {
                     if (username == Convert.ToString(MySqlReader["username"]) && epassword == Convert.ToString(MySqlReader["password"]))
                     {
+                        Random rnd = new Random();
+                        int value_t = rnd.Next(1, 100000);
                         result_connect = "yes";
                         user_id = Convert.ToString(MySqlReader["user_id"]);
                         role = Convert.ToString(MySqlReader["role"]);
@@ -93,7 +95,7 @@ namespace bsbd_kurs
                         string sqlquery = "INSERT INTO sessions (user_id, token, date) VALUES(@user_id, @token, @date)";
                         MySqlCommand cmd = new MySqlCommand(sqlquery, MySqlConnection);
                         cmd.Parameters.AddWithValue("@user_id", user_id);
-                        cmd.Parameters.AddWithValue("@token", Encoding_password(user_id));
+                        cmd.Parameters.AddWithValue("@token", Encoding_password(value_t.ToString()));
                         cmd.Parameters.AddWithValue("@date", DateTime.Now);
                         cmd.Connection = MySqlConnection;
                         cmd.ExecuteNonQuery();
